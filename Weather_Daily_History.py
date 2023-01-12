@@ -24,7 +24,7 @@ http = urllib3.PoolManager(
 oracle.init_oracle_client(lib_dir=r"C:\Users\moshiur.faisal\Oracle\instantclient_21_7")
 
 #Creating SQL Connection
-
+#add server credentials
 
 #Reading Data from SQL
 with conn.cursor() as cursor:
