@@ -53,7 +53,7 @@ json_latlong = []
 #get data from api 
 for latlong,thana,district,code in zip(latlong_list, thana_list, district_list, thana_code_list):
     # print(i,j)
-    url = 'http://api.weatherapi.com/v1/history.json?key=e0f350bfcc294b56a4242130221212&q='+latlong+'&dt='+str(yesterday)+'&end_dt='+str(yesterday)+'&hour=1'    
+    url = 'http://api.weatherapi.com/v1/history.json?key=key&q='+latlong+'&dt='+str(yesterday)+'&end_dt='+str(yesterday)+'&hour=1'    
     r = http.request('GET', url)
     if (r.status==200):
         data = json.loads(r.data.decode('utf-8'))       
