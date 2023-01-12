@@ -19,9 +19,7 @@ http = urllib3.PoolManager(
 oracle.init_oracle_client(lib_dir=r"C:\Users\moshiur.faisal\Oracle\instantclient_21_7")
 
 #Creating SQL Connection
-dsn_tns = oracle.makedsn('raxdw-scan.robi.com.bd', '1628', service_name='raxdw')
-conn = oracle.connect(user='BI_PROD', password='$iXty4bit', dsn=dsn_tns)
-cur = conn.cursor()
+#add server credentials
 
 #Reading Data from SQL
 with conn.cursor() as cursor:
@@ -47,7 +45,7 @@ json_latlong = []
 
 #get data from api 
 for latlong,thana,district,code in zip(latlong_list, thana_list, district_list, thana_code_list):
-    url = 'http://api.weatherapi.com/v1/forecast.json?key=e0f350bfcc294b56a4242130221212&q='+latlong+'&days=3&aqi=no&alerts=no'   
+    url = 'http://api.weatherapi.com/v1/forecast.json?key=key&q='+latlong+'&days=3&aqi=no&alerts=no'   
     r = http.request('GET', url)
     if (r.status==200):
         data = json.loads(r.data.decode('utf-8'))  
