@@ -24,9 +24,7 @@ http = urllib3.PoolManager(
 oracle.init_oracle_client(lib_dir=r"C:\Users\moshiur.faisal\Oracle\instantclient_21_7")
 
 #Creating SQL Connection
-dsn_tns = oracle.makedsn('raxdw-scan.robi.com.bd', '1628', service_name='raxdw')
-conn = oracle.connect(user='BI_PROD', password='$iXty4bit', dsn=dsn_tns)
-cur = conn.cursor()
+
 
 #Reading Data from SQL
 with conn.cursor() as cursor:
